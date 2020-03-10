@@ -1,0 +1,16 @@
+@startuml
+
+skinparam node {
+    BackgroundColor Grey
+}
+
+node "She\n PRON" as pron
+node "ate\n VERB" as verb
+node "the\n DET" as det
+node "pizza\n NOUN" as noun
+
+pron <-r- verb : nsubj
+verb -r--> noun : \ndobj
+det <-r-noun : det
+
+@enduml
