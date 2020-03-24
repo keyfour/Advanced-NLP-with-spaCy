@@ -1,0 +1,44 @@
+@startuml
+
+package "DOC" as doc {
+    object "Token" as token0
+    token0 : I
+    token0 : PRON
+    object "Token" as token1
+    token1 : love
+    token1 : VERB
+    object "Token" as token2
+    token2 : coffee
+    token2 : NOUN
+
+    token0 <- token1 : nsubj
+    token1 -> token2 : dobj
+}
+
+package "VOCAB" as vocab {
+    object "Lexeme" as lexeme0
+    lexeme0 : 46904...
+    object "Lexeme" as lexeme1
+    lexeme1 : 37020...
+    object "Lexeme" as lexeme2
+    lexeme2 : 31979...
+
+    token0 <--> lexeme0
+    token1 <--> lexeme1
+    token2 <--> lexeme2
+}
+
+package "STRING STORE" as store {
+    object "46904..." as string0
+    string0 : "I"
+    object "37020..." as string1
+    string1 : "love"
+    object "31979..." as string2
+    string2 : "coffee"
+
+    lexeme0 <--> string0
+    lexeme1 <--> string1
+    lexeme2 <--> string2
+}
+
+@enduml
